@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MyPageActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:cardCornerRadius="75dp"
+        app:cardElevation="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+        <Button
+            android:id="@+id/profileUpdateBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="?android:attr/selectableItemBackground"
+            android:layout_marginTop="40dp"
+            android:text="편집" />
+
+        <ImageView
+            android:id="@+id/resultUserImage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/profile" />
+    </androidx.cardview.widget.CardView>
+
+    <LinearLayout
+        android:id="@+id/infoLayout"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/cardView"
+        >
+
+        <TextView
+            android:id="@+id/idTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:text=""
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/EmailView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/NameView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/PhoneNumberView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="@color/black" />
+
+        <!-- RecyclerView 부분에 layout_width, layout_height 수정 -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/reservationTextView" />
+<!--        &lt;!&ndash; 리사이클러뷰 &ndash;&gt;-->
+<!--        <androidx.recyclerview.widget.RecyclerView-->
+<!--            android:id="@+id/recyclerView"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/reservationTextView" />-->
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/buttonLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="30dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/cardView"
+        app:layout_constraintTop_toBottomOf="@+id/infoLayout">
+
+        <!-- 수정버튼 -->
+        <Button
+            android:id="@+id/updateBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/button_round"
+            android:text="프로필 편집"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+
+        <!-- 예약 내역 버튼 -->
+        <Button
+            android:id="@+id/reserveBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/button_round"
+            android:text="이전예약내역"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+
+<!--        &lt;!&ndash; 로그아웃 버튼 &ndash;&gt;-->
+<!--        <Button-->
+<!--            android:id="@+id/logoutButton"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginHorizontal="5dp"-->
+<!--            android:layout_weight="1"-->
+<!--            android:background="@drawable/button_round"-->
+<!--            android:text="로그아웃"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="15sp" />-->
+
+<!--        &lt;!&ndash; 로그인 버튼 &ndash;&gt;-->
+<!--        <Button-->
+<!--            android:id="@+id/loginButton"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginHorizontal="5dp"-->
+<!--            android:layout_weight="1"-->
+<!--            android:background="@drawable/button_round"-->
+<!--            android:text="로그인"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="15sp"-->
+<!--            android:visibility="gone" />-->
+    </LinearLayout>
+
+    <!-- 텍스트뷰 -->
+    <TextView
+        android:id="@+id/reservationTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:background="#002A4C"
+        android:gravity="left"
+        android:paddingEnd="16dp"
+        android:paddingStart="16dp"
+        android:text="예약내역"
+        android:textColor="#FFFFFF"
+        android:textSize="15sp"
+        app:layout_constraintTop_toBottomOf="@+id/buttonLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+<!--    <com.google.android.material.tabs.TabLayout-->
+<!--        android:id="@+id/tabs"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent">-->
+
+<!--        &lt;!&ndash;방법2 뷰 xml로 탭 아이템을 추가 &ndash;&gt;-->
+<!--        <com.google.android.material.tabs.TabItem-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:icon="@drawable/home"-->
+<!--            android:text="홈"/>-->
+
+<!--        <com.google.android.material.tabs.TabItem-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:icon="@drawable/wish"-->
+<!--            android:text="위시"/>-->
+
+<!--        <com.google.android.material.tabs.TabItem-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:icon="@drawable/map"-->
+<!--            android:text="맵"/>-->
+
+<!--        <com.google.android.material.tabs.TabItem-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:icon="@drawable/review"-->
+<!--            android:text="리뷰"/>-->
+
+<!--        <com.google.android.material.tabs.TabItem-->
+
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:icon="@drawable/profile"-->
+<!--            android:text="마이"/>-->
+<!--    </com.google.android.material.tabs.TabLayout>-->
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

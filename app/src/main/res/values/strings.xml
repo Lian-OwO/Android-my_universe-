@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">My_Universe</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_adapter">adapter</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="id_label">아이디: %s</string>
+    <string name="email_label">이메일: %s</string>
+    <string name="name_label">이름: %s</string>
+    <string name="phone_number_label">전화번호: %s</string>
+
+</resources>

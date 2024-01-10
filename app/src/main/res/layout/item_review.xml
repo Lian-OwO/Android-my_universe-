@@ -1,0 +1,52 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/item_root"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="5dp">
+
+    <!-- CardView 사용 -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:elevation="2dp">
+
+        <!-- 상대 레이아웃 사용 -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <!-- 뷰페이저 넣기 -->
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/tapFragSliderviewPager2"
+                android:layout_width="match_parent"
+                android:layout_height="300dp" />
+
+            <!-- 첫 번째 TextView -->
+            <TextView
+                android:id="@+id/testText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tapFragSliderviewPager2"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="5dp"
+                android:text="제목"
+                android:textStyle="bold" />
+
+            <!-- 두 번째 TextView -->
+            <TextView
+                android:id="@+id/descriptionText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/testText"
+                android:layout_marginTop="5dp"
+                android:text="내용"
+                android:textStyle="bold" />
+
+            <!-- 아이콘 추가 -->
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>
