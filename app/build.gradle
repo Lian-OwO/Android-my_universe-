@@ -5,15 +5,15 @@ plugins {
 }
 
 android {
-    namespace 'com.my_universe'
+    namespace 'com.my_universe_busantour'
     compileSdk 34
 
     defaultConfig {
-        applicationId "com.my_universe"
+        applicationId "com.my_universe_busantour"
         minSdk 26
         targetSdk 33
-        versionCode 1
-        versionName "1.0"
+        versionCode 2
+        versionName "1.0.2"
 
         // 멀티 덱스라고, 한번에 메서드를 수행할수 있는 갯수를 풀어주는 역할.
         // 이 앱이 참조할 수있는 라이브러리 갯수를 65536 갯수를 초과하면 오류가 발생하는데
